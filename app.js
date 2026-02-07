@@ -6,7 +6,7 @@ async function send() {
   if (!userMsg) return;
 
   // show user message
-  chat.innerHTML += `<div class="message user">${userMsg}</div>`;
+  chat.innerHTML += `<div class="message user"><pre>${userMsg}</pre></div>`;
   input.value = "";
 
   // typing indicator
