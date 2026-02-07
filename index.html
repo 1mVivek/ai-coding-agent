@@ -1,21 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>AI Coding Agent</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>🧠 AI Coding Agent</h1>
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-circle">AI</div>
+        <div class="app-name">AURA AI</div>
+      </div>
 
-  <div id="chat"></div>
+      <button class="btn primary" id="new-chat-btn">New chat</button>
 
-  <div class="input-box">
-    <textarea id="input" placeholder="Ask me to write or fix code..."></textarea>
-    <button onclick="send()">Send</button>
+      <div class="section-label">Recent</div>
+      <div class="chat-list" id="chat-list">
+        <!-- dynamically filled with old chats -->
+        <!-- <button class="chat-item active">Bug in login code</button> -->
+      </div>
+
+      <div class="sidebar-footer">
+        <button class="icon-btn" id="theme-toggle" title="Toggle theme">
+          <span class="icon">🌙</span>
+          <span>Dark mode</span>
+        </button>
+        <button class="icon-btn" id="signout-btn">
+          <span class="icon">⎋</span>
+          <span>Sign out</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main chat -->
+    <main class="chat-area">
+      <header class="chat-header">
+        <div>
+          <h1>Chat</h1>
+          <p class="subtitle">Ask anything about your code.</p>
+        </div>
+      </header>
+
+      <div class="messages" id="messages">
+        <!-- Example messages -->
+        <!--
+        <div class="message bot">
+          <div class="avatar">AI</div>
+          <div class="bubble">
+            <p>Hi! Paste your code and tell me what you want to build.</p>
+          </div>
+        </div>
+        -->
+      </div>
+
+      <form class="input-bar" id="chat-form">
+        <textarea
+          id="user-input"
+          rows="1"
+          placeholder="Ask your coding question..."
+        ></textarea>
+        <button type="submit" class="btn primary">Send</button>
+      </form>
+    </main>
   </div>
 
   <script src="app.js"></script>
 </body>
 </html>
-
